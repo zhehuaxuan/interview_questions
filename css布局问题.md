@@ -1,0 +1,186 @@
+#### 1. Position有哪几种？他们有什么特点？
+
+postion有四种relative，absolute，static，fixed
+
+**static（默认）**
+
+不脱离文档流，按照正常文档流进行排列；
+**relative（相对定位）**
+
+不脱离文档流，参考自身静态位置通过 top, bottom, left, right 定位；
+**absolute(绝对定位)**
+
+脱离文档流，参考距其最近一个不为static的父级元素通过top, bottom, left, right 定位；
+**fixed(固定定位)**
+
+脱离文档流，所固定的参照对像是可视窗口。
+
+Tips❓:什么是脱离文档流？脱离文档流就是脱离按照浏览器解析的DOM布局顺序，然后对于display:block的元素，元素会变成内联。
+
+#### 2.css实现元素水平垂直居中？
+
+首先元素分类：内联+块状
+
+**内联样式：**
+
+```html
+<div id="outer">
+    <span>居中我吧</span>
+</div>
+```
+
+```css
+#outer{
+    height:100px;
+    <!-- 垂直居中 -->
+    line-height:100px; 
+    <!-- 水平居中 -->
+    text-align:center;
+}
+```
+
+**块状样式：**
+
+第一种实现方法*Flex布局*：
+
+```html
+<div id="outer">
+   <div id="inner">
+       居中我吧
+    </div>
+</div>
+```
+
+```css
+#outer {
+    height:400px;
+    width:400px;
+    border:1px solid #ccc;
+    display: flex;
+    <!-- 水平居中 -->
+    justify-content: center; 
+    <!-- 垂直居中 -->
+    align-items: center;
+}
+#inner{
+    width:100px;
+    height:100px;
+    background:red;
+}
+```
+
+第二种实现方法*相对布局*：
+
+```css
+#outer {
+   height: 400px;
+   width: 400px;
+   border: 1px solid #ccc;
+   position: relative;
+}
+
+#inner {
+   width: 100px;
+   height: 100px;
+   background: red;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translateX(-50%) translateY(-50%);
+}
+```
+
+#### 3.BFC（**块级格式化上下文：block formatting context**）
+
+**什么是**BFC?
+
+BFC就是块级格式化上下文，它**是一个独立的渲染区域**，规定了块级元素了里面的所有元素都会在里面进行布局，不会影响外面的布局
+
+**满足什么样的条件就是**BFC?
+
+> 1. 根元素，即HTML元素
+> 2. float的值不为none
+> 3. overflow的值不为visible
+> 4. display的值为inline-block、table-cell、table-caption
+> 5. position的值为absolute或fixed　
+
+**BFC有什么特点？**
+
+> 1. 内部的Box会在垂直方向上一个接一个放置。
+>
+> 2. Box垂直方向的距离由margin决定，属于同一个BFC的两个相邻Box的margin会发生重叠。
+>
+> 3. 每个元素的margin box 的左边，与包含块border box的左边相接触。
+>
+> 4. BFC的区域不会与float box重叠。
+>
+> 5. BFC是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。
+>
+> 6. 计算BFC的高度时，浮动元素也会参与计算。
+
+**作用：**
+
+> 1. 自适应两栏布局
+> 2. 可以阻止元素被浮动元素覆盖
+> 3. 可以包含浮动元素——清除内部浮动
+> 4. 分属于不同的BFC时可以阻止margin重叠
+
+#### 4. CSS的伪类
+
+CSS里面有哪些伪类？伪类有哪些种类？伪类的作用是什么？
+
+#### 5. CSS实现一个正方形和一个三角形
+
+**正方形：**
+
+```html
+<div id="square"></div>
+```
+
+```css
+#square{
+    width:0px;
+    height:0px;
+    border:50px solid red;
+    box-sizing: content-box;
+}
+```
+
+上述实现一个边长为100px的正方形。
+
+**三角形:**
+
+```html
+<div id="triangle"></div>
+```
+
+```css
+ #triangle {
+            width: 0;
+            height: 0;
+            border-top: 40px solid transparent;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 40px solid #ff0000;
+            box-sizing: content-box;
+}
+```
+
+
+
+#### 6. 实现一个外圈半径为10px，内圈半径为5px的双圆环
+
+```html
+<div id="circle"></div>
+```
+
+```css
+#circle{
+	width:10px;
+    height:10px;
+    border:5px solid red;
+    border-radius: 10px;
+    box-sizing: content-box;
+}
+```
+
