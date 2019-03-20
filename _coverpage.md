@@ -1,6 +1,4 @@
-![logo](_media/icon.svg)
-
-# docsify <small>4.9.1</small>
+# 前端知识点整理 <small>2019.3.20</small>
 
 > A magical documentation site generator.
 
@@ -10,3 +8,4 @@
 
 [GitHub](https://github.com/docsifyjs/docsify/)
 [Getting Started](#docsify)
+
