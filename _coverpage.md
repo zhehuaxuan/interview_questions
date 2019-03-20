@@ -1,11 +1,9 @@
 # 前端知识点整理 <small>2019.3.20</small>
 
-> A magical documentation site generator.
+> 整理前端知识点，增强知识深度.
 
-- Simple and lightweight (~21kB gzipped)
-- No statically built html files
-- Multiple themes
+- 整理前端知识点，增强知识深度
 
-[GitHub](https://github.com/docsifyjs/docsify/)
-[Getting Started](#docsify)
+[GitHub](https://github.com/zhehuaxuan/interview_questions)
+[Getting Started](/#/perface)
 
