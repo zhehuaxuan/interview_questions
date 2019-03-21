@@ -240,3 +240,11 @@ map+area
 
 直接放一张圆形图片
 
+### 假如现在页面里放在head的css文件下载速度很慢，页面会出现什么情况？
+
+### 假如我现在在页面动态添加了一个CSS文件，页面一定会回流吗？
+
+例如页面这个CSS文件中有translate3d呢？
+那假如我在页面里面加了一个<div style="position:absolute;width:0;hegiht:0"></div>呢，会回流吗
+CDN的原理是啥？
+
