@@ -5,5 +5,5 @@
 - 整理前端知识点，增强知识深度
 
 [GitHub](https://github.com/zhehuaxuan/interview_questions)
-[Getting Started](/#/perface)
+[Getting Started](perface)
 
